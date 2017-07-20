@@ -1,0 +1,18 @@
+<configuration>
+
+	<property name="DEV_HOME" value="/home/angularjs/logs" />
+
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder
+			by default -->
+		<file>${DEV_HOME}/testfile.log</file>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<root level="DEBUG">
+		<appender-ref ref="FILE" />
+	</root>
+</configuration>
