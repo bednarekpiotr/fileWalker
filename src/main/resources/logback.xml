@@ -1,8 +1,7 @@
 <configuration>
+	<property  name="DEV_HOME" value="C:\Users\Piotr\Documents\logs />
 
-	<property name="DEV_HOME" value="/home/angularjs/logs" />
-
-	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender" >
 		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder
 			by default -->
 		<file>${DEV_HOME}/testfile.log</file>
@@ -15,4 +14,5 @@
 	<root level="DEBUG">
 		<appender-ref ref="FILE" />
 	</root>
+
 </configuration>

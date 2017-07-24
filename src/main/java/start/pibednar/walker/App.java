@@ -50,7 +50,7 @@ public class App {
   }
 
   public void traverse(String[] args) {
-    String path = "/home/angularjs";
+    String path = "C:\\Users\\Piotr\\Documents";
 
     try {
 
@@ -68,7 +68,7 @@ public class App {
       LOG.info("Extension :" + argss.getExtension());
       LOG.info("Size: " + argss.getSize());
       List<Filter> filters = new ArrayList<>();
-      if (argss.isExtension()) {
+      if (!argss.getExtension().isEmpty()) {
         filterExtensionImplementation.setExtension(argss.getExtension());
       }
       else {
@@ -79,11 +79,11 @@ public class App {
       filterSizeImplementation.setSize(argss.getSize());
       filters.add(filterSizeImplementation);
       walkerImplementation.setFilters(filters);
-      if (argss.isPath()) {
+      if (argss.getPath().isEmpty()) {
         walkerImplementation.traverse(argss.getPath());
       }
       else {
-        walkerImplementation.traverse("/home/angularjs");
+        walkerImplementation.traverse(path);
       }
 
     } catch (FileNotFoundException e) {
